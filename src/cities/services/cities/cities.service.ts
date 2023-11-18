@@ -54,7 +54,7 @@ export class CitiesService {
     });
   }
 
-  async delete(id: string) {
+  async delete(id: string): Promise<City> {
     const city = await this.cityRepository.findOne({
       where: { id },
     });

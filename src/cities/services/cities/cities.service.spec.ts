@@ -41,7 +41,7 @@ describe('CitiesService', () => {
         id: faker.string.uuid(),
         name: faker.location.city.name,
         country: allowedCountries[0],
-        population: 1,
+        population: faker.number.int(),
       });
       list.push(city);
     }
@@ -53,9 +53,9 @@ describe('CitiesService', () => {
 
   it('create should return a new city', async () => {
     const createCityDto: CreateCityDto = {
-      name: 'Buenos Aires',
+      name: faker.location.city(),
       country: allowedCountries[0],
-      population: 1,
+      population: faker.number.int(),
     };
 
     const result = await service.create(createCityDto);
@@ -67,7 +67,7 @@ describe('CitiesService', () => {
 
   it('create should throw an exception for invalid country', async () => {
     const createCityDto: CreateCityDto = {
-      name: 'Bogota',
+      name: faker.location.city(),
       country: 'Colombia',
       population: 1,
     };
@@ -104,13 +104,13 @@ describe('CitiesService', () => {
 
   it('update should modify a city', async () => {
     const updateCityDto: UpdateCityDto = {
-      name: 'La Plata',
+      name: faker.location.city(),
     };
 
     const result: City = await service.update(list[0].id, updateCityDto);
 
     expect(result).toBeDefined();
-    expect(result.name).toBe('La Plata');
+    expect(result.name).toBe(updateCityDto.name);
   });
 
   it('update should throw an exception for an invalid city', async () => {
