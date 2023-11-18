@@ -26,4 +26,13 @@ export class SupermarketsValidationService {
       );
     }
   }
+
+  async validateAssociatedSupermarket(supermarket: Supermarket) {
+    if (!supermarket) {
+      throw new BusinessLogicException(
+        ErrorMessage(ErrorType.NOT_ASSOCIATED, 'supermarket'),
+        BusinessError.BAD_REQUEST,
+      );
+    }
+  }
 }
