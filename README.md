@@ -19,7 +19,7 @@
 - Type **npm test:cov**
 
 ### Collections Postman Tests
-The collections are located in [https://github.com/RafaelOrtiz06/api-practical-test/tree/main/collections](collections) folder.
+The collections are located in [collections](https://github.com/RafaelOrtiz06/api-practical-test/tree/main/collections) folder.
 
 City
 ---
