@@ -34,4 +34,5 @@ Association
 ![image](https://github.com/RafaelOrtiz06/api-practical-test/assets/98363516/06f0ba75-e91d-411e-9ee0-bd0c7492ba3f)
 
 
-
+### Release
+[Release](https://github.com/RafaelOrtiz06/api-practical-test/releases/tag/practical-test)
