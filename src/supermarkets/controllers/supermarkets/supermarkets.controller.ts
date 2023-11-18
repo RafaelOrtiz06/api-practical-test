@@ -3,15 +3,20 @@ import {
   Get,
   Post,
   Body,
-  Patch,
   Param,
   Delete,
+  HttpCode,
+  HttpStatus,
+  UseInterceptors,
+  Put,
 } from '@nestjs/common';
 
 import { SupermarketsService } from '../../services/supermarkets/supermarkets.service';
 import { CreateSupermarketDto } from '../../dto/create-supermarket.dto';
 import { UpdateSupermarketDto } from '../../dto/update-supermarket.dto';
+import { BusinessErrorsInterceptor } from '../../../shared/interceptors/interceptors';
 
+@UseInterceptors(BusinessErrorsInterceptor)
 @Controller('supermarkets')
 export class SupermarketsController {
   constructor(private readonly supermarketsService: SupermarketsService) {}
@@ -31,7 +36,7 @@ export class SupermarketsController {
     return this.supermarketsService.findOne(id);
   }
 
-  @Patch(':id')
+  @Put(':id')
   update(
     @Param('id') id: string,
     @Body() updateSupermarketDto: UpdateSupermarketDto,
@@ -40,6 +45,7 @@ export class SupermarketsController {
   }
 
   @Delete(':id')
+  @HttpCode(HttpStatus.NO_CONTENT)
   remove(@Param('id') id: string) {
     return this.supermarketsService.delete(id);
   }

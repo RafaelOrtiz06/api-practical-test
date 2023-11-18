@@ -96,6 +96,8 @@ export class CitiesSupermarketsService {
           where: { id: supermarkets[i].id },
         },
       );
+
+      await this.supermarketValidation.validateExistingSupermarket(supermarket);
       await this.supermarketValidation.validateAssociatedSupermarket(
         supermarket,
       );

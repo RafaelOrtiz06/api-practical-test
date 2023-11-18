@@ -5,15 +5,13 @@ services:
     container_name: rafael-test-api
     build:
       context: .
-      dockerfile: Dockerfile.dev
+      dockerfile: Dockerfile
     env_file:
       - .env
     ports:
       - '3000:3000'
     depends_on:
       - rafael-test-db
-    volumes:
-      - ./:/rafael-test-api
 
   rafael-test-db:
     container_name: rafael-test-db
@@ -23,4 +21,4 @@ services:
       - POSTGRES_PASSWORD=postgres
       - POSTGRES_DB=test
     ports:
-      - '5434:5432'
+      - '5432:5432'
