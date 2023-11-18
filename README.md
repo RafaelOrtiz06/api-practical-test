@@ -17,3 +17,21 @@
 ### Unit Tests
 
 - Type **npm test:cov**
+
+### Collections Postman Tests
+The collections are located in [https://github.com/RafaelOrtiz06/api-practical-test/tree/main/collections](collections) folder.
+
+City
+---
+![image](https://github.com/RafaelOrtiz06/api-practical-test/assets/98363516/4f2b29b8-0fbf-4b79-ace5-63b53e51c8a0)
+
+Supermarket
+---
+![image](https://github.com/RafaelOrtiz06/api-practical-test/assets/98363516/d783555d-0287-4fb2-b929-ab0b3602b61a)
+
+Association
+---
+![image](https://github.com/RafaelOrtiz06/api-practical-test/assets/98363516/06f0ba75-e91d-411e-9ee0-bd0c7492ba3f)
+
+
+
