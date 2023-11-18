@@ -1,6 +1,13 @@
-import { Supermarket } from 'src/supermarkets/entities/supermarket.entity';
-import { Column, JoinTable, ManyToMany, PrimaryGeneratedColumn } from 'typeorm';
+import { Supermarket } from '../../supermarkets/entities/supermarket.entity';
+import {
+  Column,
+  Entity,
+  JoinTable,
+  ManyToMany,
+  PrimaryGeneratedColumn,
+} from 'typeorm';
 
+@Entity()
 export class City {
   @PrimaryGeneratedColumn('uuid')
   id: string;
